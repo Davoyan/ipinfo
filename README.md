@@ -32,8 +32,8 @@ Example: reading RU networks in Clash Mihomo:
   geoip-ru:
     type: http
     behavior: ipcidr
-    format: mrs
-    url: https://raw.githubusercontent.com/Davoyan/ipinfo/refs/heads/main/geo/geoip/ru.lst
+    format: text
+    url: https://raw.githubusercontent.com/Davoyan/ipinfo/main/geo/geoip/ru.lst
     path: ./rule-sets/geoip-ru.lst
     interval: 86400
 ```
