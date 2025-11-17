@@ -5,16 +5,12 @@ This repository contains **IP address ranges organized by country**, generated f
 ---
 
 
-- Each `.lst` file contains **one network per line**.
-- File names are **two-letter ISO 3166-1 alpha-2 country codes** in lowercase.
-
-
 ## Source
 
-Data is downloaded from [IPinfo Lite](https://ipinfo.io/data) automatically using a GitHub Actions workflow:
+Data is downloaded from [IPinfo Lite](https://ipinfo.io/data) :
 
-- The workflow downloads the latest CSV file.
-- Parses it into `.lst` files per country.
+- Automaticly downloads the latest CSV file.
+- Parses it into `.lst`, `.yaml`, `.mrs` files per country.
 - Commits and pushes the updated files back to the repository.
 
 
