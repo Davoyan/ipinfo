@@ -1,6 +1,6 @@
 # IPInfo GeoIP Lists by Country
 
-This repository contains **IP address ranges organized by country**, generated from [IPinfo Lite](https://ipinfo.io/) data. Each file corresponds to a country and contains a list of networks in CIDR notation.
+This repository contains **IP address ranges organized by country**, generated from [IPinfo Lite](https://ipinfo.io/) data ***daily***. Each file corresponds to a country and contains a list of networks in CIDR notation.
 
 ---
 
