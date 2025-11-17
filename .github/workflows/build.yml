@@ -39,6 +39,7 @@ jobs:
     - name: Generate country lists
       run: |
         mkdir -p geo/geoip
+        mkdir -p CDN
         python scripts/parse.py
 
     - name: Install mihomo
@@ -54,7 +55,7 @@ jobs:
 
     - name: Convert .lst to .mrs
       run: |
-        for file in geo/geoip/*.lst; do
+        find . -type f -name "*.lst" | while read file; do
           mihomo convert-ruleset ipcidr text "$file" "${file%.lst}.mrs"
         done
 
@@ -64,6 +65,7 @@ jobs:
       run: |
         git config user.name "IP List Generator"
         git config user.email "noreply@myrepo.com"
-        git add geo/geoip/
+        git add geo/*
+        git add CDN/*
         git commit -m "Update country IP lists" || echo "No changes"
         git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
