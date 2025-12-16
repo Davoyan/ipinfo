@@ -91,11 +91,11 @@ jobs:
         git pull --ff-only
         git tag "$TAG"
         git push origin "$TAG"
-
+          
     - name: Release and upload assets
       #if: steps.diff.outputs.changed == 'true'
       env:
-        GH_TOKEN: ${{ github.token }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         gh release create ${{ steps.tag.outputs.tag }} \
           -t "GeoIP IPinfo update ${{ steps.tag.outputs.tag }}" \
