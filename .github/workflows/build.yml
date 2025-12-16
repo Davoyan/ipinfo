@@ -1,4 +1,4 @@
-name: Build IP lists
+name: Build RU&BY geoipinfo.dat
 
 on:
   push:
@@ -19,53 +19,57 @@ jobs:
       contents: write
 
     steps:
-    - name: Checkout repo
+    - name: Checkout repo (this tree)
       uses: actions/checkout@v3
       with:
         persist-credentials: false
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: Checkout geo lists from main
+      uses: actions/checkout@v3
       with:
-        python-version: '3.11'
+        ref: main
+        path: geo-src
+        
+    - name: Setup Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24'
+        
+    - name: Tidy go modules
+      run: go mod tidy
 
-    - name: Install dependencies
-      run: pip install --upgrade pip
-
-    - name: Download CSV
+    - name: Copy lst files
       run: |
-        curl -L "https://ipinfo.io/data/ipinfo_lite.csv.gz?_src=frontend&token=${{ secrets.IPINFO_TOKEN }}" -o ipinfo_lite.csv.gz
-
-    - name: Generate country lists
+        mkdir -p geo
+        rm -rf geo/*
+        mv geo-src/geo/geoip/continent/*.lst geo/
+        cp geo-src/geo/geoip/*.lst geo/
+        
+    - name: Install geoip tool
       run: |
-        mkdir -p geo/geoip
-        mkdir -p CDN
-        python scripts/parse.py
-
-    - name: Install mihomo
+        go install github.com/Loyalsoldier/geoip@latest
+        
+    - name: Build dat
       run: |
-        M_VER=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | \
-                grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
-        echo "Latest mihomo version: $M_VER"
-        wget -O mihomo.gz https://github.com/MetaCubeX/mihomo/releases/download/v${M_VER}/mihomo-linux-amd64-v${M_VER}.gz
-        gunzip -f mihomo.gz
-        chmod +x mihomo
-        sudo mv mihomo /usr/local/bin/
-        mihomo -v
-
-    - name: Convert .lst to .mrs
+        geoip convert
+        
+    - name: Rename
       run: |
-        find . -type f -name "*.lst" | while read file; do
-          mihomo convert-ruleset ipcidr text "$file" "${file%.lst}.mrs"
-        done
-
+        mkdir -p release
+        mv release/geoip.dat release/geoipinfo.dat
+        sha256sum release/geoipinfo.dat > release/geoipinfo.dat.sha256sum
+       
+    - name: Generate hash
+      run: |
+        sha256sum release/geoipinfo.dat > release/geoipinfo.dat.sha256sum
+          
     - name: Commit and push generated files
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config user.name "IP List Generator"
+        git config user.name "IP geoipinfo.dat Generator"
         git config user.email "noreply@myrepo.com"
         git add geo/*
-        git add CDN/*
+        git add release/*
         git commit -m "Update country IP lists" || echo "No changes"
         git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
