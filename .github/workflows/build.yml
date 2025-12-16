@@ -19,10 +19,16 @@ jobs:
       contents: write
 
     steps:
-    - name: Checkout repo
+    - name: Checkout repo (this tree)
       uses: actions/checkout@v3
       with:
         persist-credentials: false
+
+    - name: Checkout geo lists from main
+      uses: actions/checkout@v3
+      with:
+        ref: main
+        path: geo-src
         
     - name: Setup Go
       uses: actions/setup-go@v5
@@ -32,12 +38,12 @@ jobs:
     - name: Tidy go modules
       run: go mod tidy
 
-    - name: Download lst
+    - name: Copy lst files
       run: |
         mkdir -p geo
         rm -rf geo/*
-        curl -L "https://raw.githubusercontent.com/Davoyan/ipinfo/main/geo/geoip/ru.lst" -o geo/ru.lst
-        curl -L "https://raw.githubusercontent.com/Davoyan/ipinfo/main/geo/geoip/by.lst" -o geo/by.lst
+        cp geo-src/geo/geoip/ru.lst geo/ru.lst
+        cp geo-src/geo/geoip/by.lst geo/by.lst
         
     - name: Install geoip tool
       run: |
