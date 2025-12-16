@@ -62,17 +62,17 @@ jobs:
         fi
 
     - name: Generate hash
-      #if: steps.diff.outputs.changed == 'true'
+      if: steps.diff.outputs.changed == 'true'
       run: |
         sha256sum release/geoipinfo.dat > release/geoipinfo.dat.sha256sum
         
     - name: Clean temporary geo folder
-      #if: steps.diff.outputs.changed == 'true'
+      if: steps.diff.outputs.changed == 'true'
       run: |
         rm -rf geo
     
     - name: Commit and push
-      #if: steps.diff.outputs.changed == 'true'
+      if: steps.diff.outputs.changed == 'true'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -83,7 +83,7 @@ jobs:
         git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
 
     - name: Create tag
-      #if: steps.diff.outputs.changed == 'true'
+      if: steps.diff.outputs.changed == 'true'
       id: tag
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -94,7 +94,7 @@ jobs:
         git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git "$TAG"
           
     - name: Release and upload assets
-      #if: steps.diff.outputs.changed == 'true'
+      if: steps.diff.outputs.changed == 'true'
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
