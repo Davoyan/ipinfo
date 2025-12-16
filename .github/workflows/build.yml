@@ -9,8 +9,8 @@ on:
       - "LICENSE*"
       - "*.md"
   workflow_dispatch:
-  schedule:
-    - cron: '0 3 * * *'
+  #schedule:
+  #  - cron: '0 3 * * *'
 
 jobs:
   build:
