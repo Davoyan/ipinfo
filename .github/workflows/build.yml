@@ -1,4 +1,4 @@
-name: Build RU&BY geoipinfo.dat
+name: Build IP lists
 
 on:
   push:
