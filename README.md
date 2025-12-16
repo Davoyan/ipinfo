@@ -6,7 +6,7 @@ mkdir -p /var/lib/marzban/assets/
 ```
 Скачиваем 
 ```bash
-wget -O /var/lib/marzban/assets/zapret.dat https://raw.githubusercontent.com/Davoyan/ipinfo/ru-by-geoip-dat/release/geoipinfo.dat
+wget -O /var/lib/marzban/assets/geoipinfo.dat https://raw.githubusercontent.com/Davoyan/ipinfo/ru-by-geoip-dat/release/geoipinfo.dat
 ```
 Устанавливаем значение в .env файле
 
