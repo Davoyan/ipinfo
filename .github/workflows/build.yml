@@ -79,7 +79,7 @@ jobs:
         git config user.name "IP geoipinfo.dat Generator"
         git config user.email "noreply@myrepo.com"
         git add release/*
-        git commit -m "Update country IP lists"
+        git commit -m "Update country IP lists" || echo "No changes"
         git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
 
     - name: Create tag
