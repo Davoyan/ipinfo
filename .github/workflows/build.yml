@@ -62,23 +62,28 @@ jobs:
         fi
 
     - name: Generate hash
-      if: steps.diff.outputs.changed == 'true'
+      #if: steps.diff.outputs.changed == 'true'
       run: |
         sha256sum release/geoipinfo.dat > release/geoipinfo.dat.sha256sum
-
+        
+    - name: Clean temporary geo folder
+      #if: steps.diff.outputs.changed == 'true'
+      run: |
+        rm -rf geo
+    
     - name: Commit and push
-      if: steps.diff.outputs.changed == 'true'
+      #if: steps.diff.outputs.changed == 'true'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config user.name "IP geoipinfo.dat Generator"
         git config user.email "noreply@myrepo.com"
-        git add geo/* release/*
+        git add release/*
         git commit -m "Update country IP lists"
         git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
 
     - name: Create tag
-      if: steps.diff.outputs.changed == 'true'
+      #if: steps.diff.outputs.changed == 'true'
       id: tag
       run: |
         TAG="geoip-$(date +'%Y.%m.%d-%H%M')"
@@ -88,7 +93,7 @@ jobs:
         git push origin "$TAG"
 
     - name: Release and upload assets
-      if: steps.diff.outputs.changed == 'true'
+      #if: steps.diff.outputs.changed == 'true'
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
