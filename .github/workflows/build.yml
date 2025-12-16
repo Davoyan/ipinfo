@@ -85,12 +85,13 @@ jobs:
     - name: Create tag
       #if: steps.diff.outputs.changed == 'true'
       id: tag
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         TAG="geoip-$(date +'%Y.%m.%d-%H%M')"
         echo "tag=$TAG" >> $GITHUB_OUTPUT
-        git pull --ff-only
         git tag "$TAG"
-        git push origin "$TAG"
+        git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git "$TAG"
           
     - name: Release and upload assets
       #if: steps.diff.outputs.changed == 'true'
