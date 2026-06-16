@@ -706,7 +706,6 @@ payload:
     - 172.94.94.224/28
     - 172.94.94.240/29
     - 172.94.94.252/30
-    - 172.98.177.0/24
     - 172.225.77.64/27
     - 172.225.180.144/28
     - 172.225.221.112/28
@@ -1975,12 +1974,18 @@ payload:
     - 2620:0:1cff:dead:beef::18e4/128
     - 2620:0:1cff:dead:beef::18e6/128
     - 2620:0:1cff:dead:beef::1cef/128
-    - 2620:0:1cff:dead:beef::2059/128
+    - 2620:0:1cff:dead:beef::2017/128
+    - 2620:0:1cff:dead:beef::2019/128
+    - 2620:0:1cff:dead:beef::201b/128
+    - 2620:0:1cff:dead:beef::2058/127
     - 2620:0:1cff:dead:beef::22c9/128
     - 2620:0:1cff:dead:beef::23ed/128
     - 2620:0:1cff:dead:beef::2536/127
     - 2620:0:1cff:dead:beef::25ba/127
     - 2620:0:1cff:dead:beef::25bc/126
+    - 2620:0:1cff:dead:beef::2818/127
+    - 2620:0:1cff:dead:beef::2842/127
+    - 2620:0:1cff:dead:beef::2844/127
     - 2620:0:1cff:dead:beef::29f0/127
     - 2620:0:1cff:dead:beef::2a74/127
     - 2620:0:1cff:dead:beef::2a78/128
@@ -1997,7 +2002,6 @@ payload:
     - 2620:0:1cff:dead:beef::424e/128
     - 2620:0:1cff:dead:beef::4250/128
     - 2620:0:1cff:dead:beef::45aa/127
-    - 2620:0:1cff:dead:beef::4a03/128
     - 2620:0:1cff:dead:beef::4dae/127
     - 2620:0:1cff:dead:beef::53ac/127
     - 2620:0:1cff:dead:beef::6605/128
