@@ -278,7 +278,6 @@ payload:
     - 45.74.55.248/29
     - 45.85.188.0/24
     - 45.96.0.0/12
-    - 45.154.120.0/23
     - 45.197.71.0/24
     - 45.197.72.0/23
     - 45.240.0.0/13
@@ -747,7 +746,6 @@ payload:
     - 102.223.242.0/24
     - 102.223.243.0/24
     - 102.223.250.0/24
-    - 103.4.98.136/31
     - 103.84.111.0/24
     - 103.151.58.0/23
     - 103.198.202.0/24
@@ -942,7 +940,7 @@ payload:
     - 129.134.70.251/32
     - 129.134.70.253/32
     - 129.134.70.255/32
-    - 129.134.80.167/32
+    - 129.134.80.166/31
     - 129.134.80.168/31
     - 129.134.83.73/32
     - 129.134.83.74/31
@@ -2031,9 +2029,9 @@ payload:
     - 217.55.128.0/17
     - 217.139.0.0/16
     - 219.83.0.0/19
-    - 2001:470:1f0b:6a7::/64
     - 2001:470:1f27:f::/64
     - 2001:470:1f29:129::/64
+    - 2001:470:1f29:329::/64
     - 2001:470:1f29:36a::/64
     - 2001:470:1f29:3ca::/64
     - 2001:470:1f2d:5d::/64
@@ -2193,141 +2191,27 @@ payload:
     - 2607:6b80:6f:8000::/49
     - 2607:f108:a00:4::/64
     - 2620:0:1c00:5a::/64
-    - 2620:0:1cff:dead:beee::1ba/127
-    - 2620:0:1cff:dead:beee::378/127
-    - 2620:0:1cff:dead:beee::464/127
-    - 2620:0:1cff:dead:beee::574/127
-    - 2620:0:1cff:dead:beee::866/127
-    - 2620:0:1cff:dead:beee::8aa/127
-    - 2620:0:1cff:dead:beee::a06/127
-    - 2620:0:1cff:dead:beee::a08/127
-    - 2620:0:1cff:dead:beee::c06/127
-    - 2620:0:1cff:dead:beee::13e6/128
-    - 2620:0:1cff:dead:beee::1658/128
-    - 2620:0:1cff:dead:beee::17b6/128
-    - 2620:0:1cff:dead:beee::1856/127
-    - 2620:0:1cff:dead:beee::18c8/128
-    - 2620:0:1cff:dead:beee::18ca/128
-    - 2620:0:1cff:dead:beee::1986/127
-    - 2620:0:1cff:dead:beee::1a54/127
     - 2620:0:1cff:dead:beee::1d1e/128
-    - 2620:0:1cff:dead:beee::1db0/128
-    - 2620:0:1cff:dead:beee::1db2/128
-    - 2620:0:1cff:dead:beee::2482/128
-    - 2620:0:1cff:dead:beef::69/128
-    - 2620:0:1cff:dead:beef::571/128
-    - 2620:0:1cff:dead:beef::673/128
-    - 2620:0:1cff:dead:beef::6a6/128
-    - 2620:0:1cff:dead:beef::879/128
-    - 2620:0:1cff:dead:beef::9a7/128
-    - 2620:0:1cff:dead:beef::116d/128
-    - 2620:0:1cff:dead:beef::1182/128
-    - 2620:0:1cff:dead:beef::133b/128
-    - 2620:0:1cff:dead:beef::1503/128
-    - 2620:0:1cff:dead:beef::176c/128
-    - 2620:0:1cff:dead:beef::2d9b/128
-    - 2620:0:1cff:dead:beef::2e51/128
-    - 2620:0:1cff:dead:beef::2e55/128
-    - 2620:0:1cff:dead:beef::39c4/128
-    - 2620:0:1cff:dead:beef::3b7c/128
-    - 2620:0:1cff:dead:beef::4016/128
     - 2620:0:1cff:dead:beef::4018/128
-    - 2620:0:1cff:dead:beef::4020/128
-    - 2620:0:1cff:dead:beef::4022/128
-    - 2620:0:1cff:dead:beef::40c0/128
-    - 2620:0:1cff:dead:beef::467c/128
-    - 2620:0:1cff:dead:beef::4680/128
-    - 2620:0:1cff:dead:beef::4891/128
-    - 2620:0:1cff:dead:beef::4893/128
-    - 2620:0:1cff:dead:beef::4895/128
-    - 2620:0:1cff:dead:beef::4897/128
-    - 2620:0:1cff:dead:beef::4899/128
-    - 2620:0:1cff:dead:beef::489a/127
-    - 2620:0:1cff:dead:beef::489d/128
-    - 2620:0:1cff:dead:beef::489f/128
-    - 2620:0:1cff:dead:beef::4f8a/128
     - 2620:0:1cff:dead:beef::52e5/128
-    - 2620:0:1cff:dead:beef::5548/128
-    - 2620:0:1cff:dead:beef::55ec/128
-    - 2620:0:1cff:dead:beef::5a62/127
-    - 2620:0:1cff:dead:beef::5a64/126
-    - 2620:0:1cff:dead:beef::5a68/127
+    - 2620:0:1cff:dead:beef::5a63/128
+    - 2620:0:1cff:dead:beef::5a65/128
+    - 2620:0:1cff:dead:beef::5a67/128
+    - 2620:0:1cff:dead:beef::5a69/128
     - 2620:0:1cff:dead:beef::5a6b/128
-    - 2620:0:1cff:dead:beef::5a6c/126
+    - 2620:0:1cff:dead:beef::5a6d/128
+    - 2620:0:1cff:dead:beef::5a6f/128
     - 2620:0:1cff:dead:beef::5a71/128
-    - 2620:0:1cff:dead:beef::5a72/127
-    - 2620:0:1cff:dead:beef::5a74/126
-    - 2620:0:1cff:dead:beef::5a78/128
+    - 2620:0:1cff:dead:beef::5a73/128
+    - 2620:0:1cff:dead:beef::5a75/128
+    - 2620:0:1cff:dead:beef::5a77/128
     - 2620:0:1cff:dead:beef::5a7b/128
-    - 2620:0:1cff:dead:beef::5a7e/127
-    - 2620:0:1cff:dead:beef::5a80/127
-    - 2620:0:1cff:dead:beef::5d1c/128
-    - 2620:0:1cff:dead:beef::5d1e/128
-    - 2620:0:1cff:dead:beef::5d20/128
-    - 2620:0:1cff:dead:beef::5f50/128
-    - 2620:0:1cff:dead:beef::68d0/128
-    - 2620:0:1cff:dead:beef::6930/128
-    - 2620:0:1cff:dead:beef::6a4b/128
-    - 2620:0:1cff:dead:beef::6a4d/128
-    - 2620:0:1cff:dead:beef::6a51/128
-    - 2620:0:1cff:dead:beef::6ea8/128
-    - 2620:0:1cff:dead:beef::6f12/128
-    - 2620:0:1cff:dead:beef::6f82/128
-    - 2620:0:1cff:dead:beef::6f8a/128
-    - 2620:0:1cff:dead:beef::6f92/128
-    - 2620:0:1cff:dead:beef::8564/128
-    - 2620:0:1cff:dead:beef::87ad/128
-    - 2620:0:1cff:dead:beef::87b1/128
-    - 2620:0:1cff:dead:beef::87b5/128
-    - 2620:0:1cff:dead:beef::87b7/128
-    - 2620:0:1cff:dead:beef::87b9/128
-    - 2620:0:1cff:dead:beef::a16c/127
-    - 2620:0:1cff:dead:beef::a67a/127
-    - 2620:0:1cff:dead:beef::a67c/127
-    - 2620:0:1cff:dead:beef::a67f/128
-    - 2620:0:1cff:dead:beef::a680/126
-    - 2620:0:1cff:dead:beef::a684/127
-    - 2620:0:1cff:dead:beef::a687/128
-    - 2620:0:1cff:dead:beef::a689/128
-    - 2620:0:1cff:dead:beef::a68a/127
-    - 2620:0:1cff:dead:beef::a68c/127
-    - 2620:0:1cff:dead:beef::a68f/128
-    - 2620:0:1cff:dead:beef::a691/128
-    - 2620:0:1cff:dead:beef::a692/127
-    - 2620:0:1cff:dead:beef::a694/127
-    - 2620:0:1cff:dead:beef::a697/128
-    - 2620:0:1cff:dead:beef::a88a/128
-    - 2620:0:1cff:dead:beef::a89a/128
-    - 2620:0:1cff:dead:beef::a8c7/128
-    - 2620:0:1cff:dead:beef::a8c9/128
-    - 2620:0:1cff:dead:beef::a8cf/128
-    - 2620:0:1cff:dead:beef::a8d1/128
-    - 2620:0:1cff:dead:beef::a8d7/128
-    - 2620:0:1cff:dead:beef::a8d9/128
-    - 2620:0:1cff:dead:beef::a8df/128
-    - 2620:0:1cff:dead:beef::a8e1/128
-    - 2620:0:1cff:dead:beef::ab91/128
-    - 2620:0:1cff:dead:beef::ab93/128
-    - 2620:0:1cff:dead:beef::ab95/128
-    - 2620:0:1cff:dead:beef:0:1:c12a/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f1a2/127
-    - 2620:0:1cff:dead:beef:ffff:ffff:f1a4/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f1e0/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f2b1/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f2b2/127
-    - 2620:0:1cff:dead:beef:ffff:ffff:f3b0/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f3b6/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f3f8/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f61c/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f7b2/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f7b6/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f7e1/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f862/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f8bd/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f8dd/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:f8de/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:fa99/128
-    - 2620:0:1cff:dead:beef:ffff:ffff:fe4c/128
+    - 2620:0:1cff:dead:beef::5a7f/128
+    - 2620:0:1cff:dead:beef::5a81/128
+    - 2620:0:1cff:dead:beef::a67a/128
+    - 2620:0:1cff:dead:beef::a682/128
+    - 2620:0:1cff:dead:beef::a68a/128
+    - 2620:0:1cff:dead:beef::a692/128
     - 2620:171:f6:f1::/64
     - 2620:171:f6:f2::/63
     - 2620:171:f6:f4::/62
